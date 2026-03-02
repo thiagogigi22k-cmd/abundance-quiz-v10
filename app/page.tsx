@@ -63,7 +63,7 @@ export default function Home() {
             onTouchStart={(e) => (e.target as HTMLInputElement).focus()}
             placeholder="Enter your name here"
             autoComplete="off"
-            className="w-full bg-[#f5f5f5] border-2 border-[#D4AF37] rounded-lg py-3 px-4 text-center text-lg mb-4 outline-none focus:ring-2 focus:ring-[#D4AF37] text-[#1a1a1a] placeholder-[#888] relative z-30 cursor-text"
+            className="w-full bg-[#f5f5f5] border-2 border-[#D4AF37] rounded-lg py-3 px-4 text-center text-lg mb-4 outline-none focus:ring-2 focus:ring-[#D4AF37] text-[#1a1a1a] placeholder:text-gray-500 placeholder:opacity-100 relative z-30 cursor-text"
           />
 
           <p className="text-sm md:text-base text-[#D4AF37] mb-6">
