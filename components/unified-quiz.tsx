@@ -745,7 +745,7 @@ export default function UnifiedQuiz() {
                 {name}, Make your choice now!
               </h2>
 
-              {/* Seed Cards */}
+              {/* Seed Cards - Fixed version */}
               <div className="w-full flex flex-col gap-8">
                 {/* First card - $7 */}
                 <div className="w-full flex flex-col items-center">
