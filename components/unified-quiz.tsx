@@ -1,5 +1,5 @@
 "use client"
-// v2 - Fixed seed cards structure
+// v3 - Seed cards without .map() - SYNC FIX
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
@@ -905,3 +905,4 @@ export default function UnifiedQuiz() {
     </div>
   )
 }
+// SYNC v3
