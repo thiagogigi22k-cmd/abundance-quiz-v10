@@ -745,36 +745,46 @@ export default function UnifiedQuiz() {
                 {name}, Make your choice now!
               </h2>
 
-              {/* Seed Cards */}
+              {/* Seed Cards - Fixed version */}
               <div className="w-full flex flex-col gap-8">
-                {[
-                  { price: "$7", desc: "The life that begins to awaken.", image: "/images/seed-sprout.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468076:1" },
-                  { price: "$17", desc: "The life of full abundance and manifestation.", image: "/images/seed-golden.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468079:1" },
-                  { price: "$27", desc: "The life of divine overflow and miracles.", image: "/images/seed-divine.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468082:1" }
-                ].map((seed, index) => (
-                  <div key={index} ref={index === 1 ? secondCardRef : null} className="w-full flex flex-col items-center">
-                    {/* Image */}
-                    <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
-                      <div className="relative w-full aspect-[4/3]">
-                        <Image src={seed.image} alt={seed.desc} fill className="object-cover" priority />
-                      </div>
+                {/* First card - $7 */}
+                <div className="w-full flex flex-col items-center">
+                  <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image src="/images/seed-sprout.jpg" alt="The life that begins to awaken." fill className="object-cover" priority />
                     </div>
-                    {/* Button */}
-                    <a
-                      href={seed.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-full py-4 rounded-full text-center font-bold text-lg transition-all duration-300 active:scale-[0.97] block ${
-                        seed.gold
-                          ? "bg-[#F5A623] text-[#1a1a00] shadow-[0_0_20px_rgba(245,166,35,0.3)]"
-                          : "bg-[#2a2a3a] text-[#8a8a9a] border border-[#3a3a4a]"
-                      }`}
-                    >
-                      {"This is the life I choose"} {"–"} {seed.price}
-                    </a>
                   </div>
-                ))}
+                  <a href="https://ageofabundance.mycartpanda.com/checkout/206468076:1" className="w-full mt-4 bg-[#D4AF37] hover:bg-[#b8962f] text-black font-bold text-lg py-4 rounded-full transition-colors text-center block">
+                    This is the life I choose – $7
+                  </a>
+                </div>
+
+                {/* Second card - $17 - scroll target */}
+                <div ref={secondCardRef} className="w-full flex flex-col items-center">
+                  <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image src="/images/seed-golden.jpg" alt="The life of full abundance and manifestation." fill className="object-cover" priority />
+                    </div>
+                  </div>
+                  <a href="https://ageofabundance.mycartpanda.com/checkout/206468079:1" className="w-full mt-4 bg-[#D4AF37] hover:bg-[#b8962f] text-black font-bold text-lg py-4 rounded-full transition-colors text-center block">
+                    This is the life I choose – $17
+                  </a>
+                </div>
+
+                {/* Third card - $27 */}
+                <div className="w-full flex flex-col items-center">
+                  <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image src="/images/seed-divine.jpg" alt="The life of divine overflow and miracles." fill className="object-cover" priority />
+                    </div>
+                  </div>
+                  <a href="https://ageofabundance.mycartpanda.com/checkout/206468082:1" className="w-full mt-4 bg-[#D4AF37] hover:bg-[#b8962f] text-black font-bold text-lg py-4 rounded-full transition-colors text-center block">
+                    This is the life I choose – $27
+                  </a>
+                </div>
               </div>
+
+              
             </div>
           )}
         </div>
