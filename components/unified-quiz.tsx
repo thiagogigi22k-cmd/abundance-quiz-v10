@@ -784,30 +784,7 @@ export default function UnifiedQuiz() {
                 </div>
               </div>
 
-              {/* Hidden placeholder to maintain structure */}
-              <div className="hidden">
-                    {/* Image */}
-                    <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
-                      <div className="relative w-full aspect-[4/3]">
-                        <Image src={seed.image} alt={seed.desc} fill className="object-cover" priority />
-                      </div>
-                    </div>
-                    {/* Button */}
-                    <a
-                      href={seed.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-full py-4 rounded-full text-center font-bold text-lg transition-all duration-300 active:scale-[0.97] block ${
-                        seed.gold
-                          ? "bg-[#F5A623] text-[#1a1a00] shadow-[0_0_20px_rgba(245,166,35,0.3)]"
-                          : "bg-[#2a2a3a] text-[#8a8a9a] border border-[#3a3a4a]"
-                      }`}
-                    >
-                      {"This is the life I choose"} {"–"} {seed.price}
-                    </a>
-                  </div>
-                ))}
-              </div>
+              
             </div>
           )}
         </div>
