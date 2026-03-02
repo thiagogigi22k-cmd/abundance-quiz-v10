@@ -752,7 +752,11 @@ export default function UnifiedQuiz() {
                   { price: "$17", desc: "The life of full abundance and manifestation.", image: "/images/seed-golden.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468079:1" },
                   { price: "$27", desc: "The life of divine overflow and miracles.", image: "/images/seed-divine.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468082:1" }
                 ].map((seed, index) => (
-                  <div key={index} ref={index === 1 ? secondCardRef : undefined} className="w-full flex flex-col items-center">
+                  <div 
+                    key={index} 
+                    ref={index === 1 ? secondCardRef : null} 
+                    className="w-full flex flex-col items-center"
+                  >
                     {/* Image */}
                     <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
                       <div className="relative w-full aspect-[4/3]">
