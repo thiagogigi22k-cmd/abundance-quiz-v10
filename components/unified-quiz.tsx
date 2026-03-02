@@ -449,7 +449,7 @@ export default function UnifiedQuiz() {
     return () => clearTimeout(timer)
   }, [isComplete])
 
-  // Auto-scroll to offer when it appears - scroll to second card ($17) to show $17 and $27
+  // Auto-scroll to second card ($17) when offer appears - shows $17 and $27 cards
   useEffect(() => {
     if (showOffer && secondCardRef.current) {
       setTimeout(() => {
