@@ -745,7 +745,7 @@ export default function UnifiedQuiz() {
                 {name}, Make your choice now!
               </h2>
 
-              {/* Seed Cards */}
+              {/* Seed Cards - Auto-scroll targets second card */}
               <div className="w-full flex flex-col gap-8">
                 {[
                   { price: "$7", desc: "The life that begins to awaken.", image: "/images/seed-sprout.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468076:1" },
