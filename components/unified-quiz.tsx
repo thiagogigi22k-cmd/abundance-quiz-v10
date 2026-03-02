@@ -329,6 +329,7 @@ export default function UnifiedQuiz() {
   const [showOffer, setShowOffer] = useState(false)
   const vturbRef = useRef<HTMLDivElement>(null)
   const offerRef = useRef<HTMLDivElement>(null)
+  const secondCardRef = useRef<HTMLDivElement>(null)
 
   const currentDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
 
@@ -448,11 +449,11 @@ export default function UnifiedQuiz() {
     return () => clearTimeout(timer)
   }, [isComplete])
 
-  // Auto-scroll to offer when it appears
+  // Auto-scroll to offer when it appears - scroll to second card ($17) to show $17 and $27
   useEffect(() => {
-    if (showOffer && offerRef.current) {
+    if (showOffer && secondCardRef.current) {
       setTimeout(() => {
-        offerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+        secondCardRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
       }, 200)
     }
   }, [showOffer])
@@ -751,7 +752,7 @@ export default function UnifiedQuiz() {
                   { price: "$17", desc: "The life of full abundance and manifestation.", image: "/images/seed-golden.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468079:1" },
                   { price: "$27", desc: "The life of divine overflow and miracles.", image: "/images/seed-divine.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468082:1" },
                 ].map((seed, index) => (
-                  <div key={index} className="w-full flex flex-col items-center">
+                  <div key={index} ref={index === 1 ? secondCardRef : undefined} className="w-full flex flex-col items-center">
                     {/* Image */}
                     <div className="w-full rounded-2xl overflow-hidden border border-[#D4AF37]/30">
                       <div className="relative w-full aspect-[4/3]">
