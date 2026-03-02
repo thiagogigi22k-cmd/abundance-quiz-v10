@@ -1,5 +1,5 @@
 "use client"
-// FIXED VERSION - No .map() for seed cards - 2026-03-02
+// VERSION 4 - Seed cards as separate divs, no .map() - FINAL FIX
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
