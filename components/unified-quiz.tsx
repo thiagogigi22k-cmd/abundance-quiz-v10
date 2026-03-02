@@ -1,5 +1,5 @@
 "use client"
-// v2 - Fixed seed cards structure
+// FIXED VERSION - No .map() for seed cards - 2026-03-02
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
