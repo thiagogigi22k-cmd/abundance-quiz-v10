@@ -1,25 +1,13 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
 export default function Home() {
   const [name, setName] = useState("")
   const router = useRouter()
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  // Force clear input on mount to prevent browser autofill
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.value = ""
-        setName("")
-      }
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -69,22 +57,13 @@ export default function Home() {
 
         <form onSubmit={handleSubmit} className="w-full mb-6 relative z-30">
           <input
-            ref={inputRef}
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             onTouchStart={(e) => (e.target as HTMLInputElement).focus()}
             placeholder="Enter your name here"
-            autoComplete="new-password"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-            data-form-type="other"
-            data-lpignore="true"
-            data-1p-ignore="true"
-            name="abundance-quiz-name-field"
-            id="abundance-quiz-name-input"
-            className="w-full bg-[#f5f5f5] border-2 border-[#D4AF37] rounded-lg py-3 px-4 text-center text-lg mb-4 outline-none focus:ring-2 focus:ring-[#D4AF37] text-[#1a1a1a] placeholder:text-gray-500 placeholder:opacity-100 relative z-30 cursor-text"
+            autoComplete="off"
+            className="w-full bg-[#f5f5f5] border-2 border-[#D4AF37] rounded-lg py-3 px-4 text-center text-lg mb-4 outline-none focus:ring-2 focus:ring-[#D4AF37] text-[#1a1a1a] placeholder-[#888] relative z-30 cursor-text"
           />
 
           <p className="text-sm md:text-base text-[#D4AF37] mb-6">
