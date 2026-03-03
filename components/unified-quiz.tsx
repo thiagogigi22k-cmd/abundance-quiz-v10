@@ -1,5 +1,5 @@
 "use client"
-// v2 - Fixed seed cards structure
+// RESTORED VERSION FROM COMMIT 8f20ef5
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
