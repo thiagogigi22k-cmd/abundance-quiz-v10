@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <meta name="referrer" content="no-referrer" />
+      </head>
       <body className="font-sans antialiased bg-[#0a0a0a] text-[#f5f5f5]" suppressHydrationWarning>
         {children}
         <Analytics />
