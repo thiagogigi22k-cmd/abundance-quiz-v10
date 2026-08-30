@@ -748,9 +748,11 @@ export default function UnifiedQuiz() {
               {/* Seed Cards */}
               <div className="w-full flex flex-col gap-8">
                 {[
-                  { price: "$17", desc: "The life that begins to awaken.", image: "/images/seed-sprout.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/206468079:1" },
-                  { price: "$27", desc: "The life of full abundance and manifestation.", image: "/images/seed-golden.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/205950634:1" },
-                  { price: "$37", desc: "The life of divine overflow and miracles.", image: "/images/seed-divine.jpg", gold: true, link: "https://ageofabundance.mycartpanda.com/checkout/207536216:1" },
+                  { price: "$0", desc: "The life that stays the same.", image: "/images/seed-barren.jpg", gold: false, link: "https://v0-ichoosethislfe.vercel.app" },
+                  { price: "$27", desc: "The life that begins to awaken.", image: "/images/seed-sprout.jpg", gold: true, link: "https://www.checkout-ds24.com/product/691574" },
+                  { price: "$47", desc: "The life that grows into fullness.", image: "/images/seed-tree.jpg", gold: true, link: "https://www.checkout-ds24.com/product/691572" },
+                  { price: "$77", desc: "The life of full abundance and manifestation.", image: "/images/golden-tree.png", gold: true, link: "https://www.checkout-ds24.com/product/691571" },
+                  { price: "$100", desc: "The life of divine overflow and miracles.", image: "/images/seed-divine.jpg", gold: true, link: "https://www.checkout-ds24.com/product/685315" },
                 ].map((seed, index) => (
                   <div key={index} ref={index === 1 ? secondCardRef : null} className="w-full flex flex-col items-center">
                     {/* Image */}
