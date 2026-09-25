@@ -358,6 +358,23 @@ export default function UnifiedQuiz() {
 
   const replaceNamePlaceholder = (text: string) => text.replace(/{name}/g, name)
 
+  // Forward all incoming URL params (UTMs + custom params) to checkout links
+  // so Utmify/Facebook can attribute the conversion correctly.
+  const buildCheckoutUrl = (link: string) => {
+    const incoming = searchParams.toString()
+    if (!incoming) return link
+    try {
+      const url = new URL(link)
+      const current = new URLSearchParams(incoming)
+      current.forEach((value, key) => {
+        if (!url.searchParams.has(key)) url.searchParams.set(key, value)
+      })
+      return url.toString()
+    } catch {
+      return link
+    }
+  }
+
   const getProgress = () => {
     if (stepData?.type === "question") return (stepData as QuestionStep).progress
     for (let i = currentStep - 1; i >= 0; i--) { if (quizSteps[i]?.type === "question") return (quizSteps[i] as QuestionStep).progress }
@@ -763,7 +780,7 @@ export default function UnifiedQuiz() {
                     </div>
                     {/* Button */}
                     <a
-                      href={seed.link}
+                      href={buildCheckoutUrl(seed.link)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full py-4 rounded-full text-center font-bold text-lg transition-all duration-300 active:scale-[0.97] block ${
